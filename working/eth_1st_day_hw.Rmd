@@ -1,0 +1,12 @@
+---
+title: "262_1st_day_hw"
+author: "Evan Heberlein"
+date: "2/10/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+I am taking 262 to improve my coding skills and understand principles of coding better - hopefully making it a more intuitive part of my skillset.
