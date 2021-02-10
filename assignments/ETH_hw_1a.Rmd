@@ -1,0 +1,12 @@
+---
+title: "Evan Heberlein HW 1a"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+I am taking ESM 262 to complete the EDS focus, but I am also excited to learn more about the functional underpinnings of the analytical techniques I am learning in R. I think the logical/fundamental/intuitive elements of programming have always been the most intimidating for me, but I'm excited to expand those skills as I anticipate a lot more computer science in my near future. Writing models is also very interesting to me, but I realize Naomi offers a separate class for that subject.
+
+My data science background is almost entirely from my 1.5 years at Bren (I took a computer programming course P/NP during undergrad and did not get much out of it). I have taken 206, 263, and 267, as well as Linear Algebra (Math 4A) which I also took P/NP last Fall. Starting last Summer I have been working with Kelly Caylor on some remote sensing ecohydrology research, mostly working with geospatial data in R for this project. 
