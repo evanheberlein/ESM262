@@ -1,0 +1,52 @@
+---
+title: "262 HW 1b"
+output: html_document
+author: Evan T. Heberlein, Bri Baker, Simone Albuquerque
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Overall Program Contract
+
+Calculate a wildfire vulnerability index using census data, spatial data, and information from the literature regarding wildfire history and social vulnerability.
+
+*Inputs*: Census data, Spatial data
+
+*Parameters*: Vulnerability parameters from literature (prioritization coefficients), Wildfire history (spatial/temporal)
+
+*Outputs*: Wildfire vulnerability index
+
+*Modules*:
+
+- 1. Filter data by year and location
+- 2. Normalize variable per capita & calculate census tract averages
+- 3. Rank & compare variables across census tracts
+
+### Module contracts:
+
+##### Module 1. 
+The census data is pulled in and cleaned using tidycensus() and then clipped to the region of interest. 
+
+*Output*: Masked shapefile of region of interest with socioeconomic data.
+
+##### Module 2. 
+
+Census tracts, particularly in rural areas, can vary greatly in size and population. Data inputs need to be scaled to a per-capita basis to be compared across census tracts.
+
+*Output*: Shapefiles with associated socioeconomic data scaled and averaged to area and population.
+
+##### Module 3.
+Rank & compare variables across census tracts by ranking normalized variables of interest (from module 2), vulnerability parameters from literature and fire history (external parameters).
+
+*Outputs*: Spatially referenced vulnerability index 
+
+*Meta-modules*:
+
+- Find max and min for each variable of interest 
+- Rank spatial cells into bins
+- Use parameters to modulate importance of variables
+- Sum ranks for each bin
+
+![***Figure 1** - Flow chart diagram for group B's program determining wildfire vulnerability for wildland urban interface (WUI) communities. Model inputs shown in blue rectangles, parameters shown in yellow circles, modules shown in purple diamonds, output shown in green rectangle.*](1b_model_diagram.png)
