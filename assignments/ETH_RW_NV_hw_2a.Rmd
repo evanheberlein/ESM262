@@ -1,0 +1,17 @@
+---
+title: ''
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+speeds <- c(30, 22.2, 33.3, 11.1)
+
+v_power(speeds, m)
+
+
+```
+
