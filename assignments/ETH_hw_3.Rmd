@@ -1,0 +1,28 @@
+---
+title: "HW 3"
+author: "Evan T. Heberlein"
+date: "3/1/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+```
+
+```{r while loop}
+source("R/slr_time.R")
+
+slr_fun(sea_level = 1.1, elevation = 4.1)
+```
+
+```{r case_when}
+# Create dummy data - high and low tides between -5 and 5 meters
+nsample = 28
+tide_height = runif(n =nsample, min = -5, max = 5)
+
+source("R/slr_risk.R")
+
+# Apply risk function to list of 28 tide heights - 2 high & 2 low per day for a week
+lapply(tide_height, risk_fun)
+```
