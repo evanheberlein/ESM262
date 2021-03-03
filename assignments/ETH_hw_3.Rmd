@@ -25,4 +25,7 @@ source("R/slr_risk.R")
 
 # Apply risk function to list of 28 tide heights - 2 high & 2 low per day for a week
 lapply(tide_height, risk_fun)
+
+# Check errors
+risk_fun(-22)
 ```

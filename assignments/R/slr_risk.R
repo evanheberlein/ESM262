@@ -3,6 +3,14 @@
 # takes tide height as input and provides alert if necessary
 
 risk_fun <- function(tide_height){
+  
+  # error checking for extremely low tides - sign of tsunami
+  tide_height = ifelse(
+    tide_height < -20,
+    return("tsunami evacuation!"),
+    tide_height
+  )
+  
   if (tide_height > 0) {
     
     # define classes of flood risk
@@ -10,8 +18,8 @@ risk_fun <- function(tide_height){
                       tide_height > 3 ~ "flood warning",
                       tide_height > 2 ~ "flood watch",
                       tide_height > 0 ~ "high tide"
-                      
     )
+    
   }
   
   # define negative tides

@@ -25,5 +25,3 @@ slr_fun <- function(sea_level, elevation){
   # return output of while loop calculation
   return(sprintf("The city will be flooded in year %s", year))
 }
-
-slr_fun(0, 2.5)
