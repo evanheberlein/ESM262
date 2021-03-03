@@ -16,29 +16,20 @@ source("R/fish_counts.R")
 ```
 
 
-## Instructions 
-
-Write a function that takes a vector of fish names and always returns three items
-
-* the most common fish, 
-
-* the rarest fish
-
-* the total number of fish
-
-AND
-
- include an option (defaulted to FALSE) that if TRUE also returns a histogram of the number of each fish type, with a .  Remember that you can save a graph as a variable.
- 
- need to add title giving the total number of fish caught (from `sprintf`)
+## Data Prep
  
 ```{r}
-fish <- read_tsv(here("assignments", "data", "fish.txt"))
-all_fish <- as.vector(fish[["x"]])
+fish <- read_tsv(here("assignments", "data", "fish.txt")) # input data
+all_fish <- as.vector(fish[["x"]]) # make vector
   
 ```
+
+## Function Use
  
 ```{r message=FALSE, warning=FALSE}
-# call function (enter plot = TRUE as second argument to view plot)
+
 fish_counts(all_fish)
+
+# call function (enter plot = TRUE as second argument to view plot)
+fish_counts(all_fish, plot = TRUE)
 ```
