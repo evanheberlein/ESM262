@@ -1,9 +1,14 @@
 ## fish counts
 ## Returns the most common fish, the rarest fish, the total number of fish
 ## returns plot when requested
+## takes vector input of fish species list (or really any list of occurences)
 library(tidyverse)
 
 fish_counts <- function(fish, plot = FALSE){
+  
+  # error check, ensure that plot input is logical
+  plot = ifelse((is.logical(plot) == FALSE),
+                return("plot missing 'TRUE', or 'FALSE' argument"), plot)
   
   # convert input list to factor
   fish <- as.factor(fish)
@@ -21,11 +26,8 @@ fish_counts <- function(fish, plot = FALSE){
   total_fish <- sum(fish_summary)
   
   print(c(common_fish, rare_fish, total_fish))
-  
-  plot = ifelse((is.logical(plot) == FALSE),
-                return("plot missing 'TRUE', or 'FALSE' argument"), plot)
-  
-  # make plot
+
+  # make plot conditionally
   if(plot == TRUE){
     plottitle = sprintf("Here is a figure showing %s fish", sum(fish_summary))
     
