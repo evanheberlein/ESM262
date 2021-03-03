@@ -39,5 +39,6 @@ all_fish <- as.vector(fish[["x"]])
 ```
  
 ```{r message=FALSE, warning=FALSE}
-fish_counts(all_fish, plot = TRUE)
+# call function (enter plot = TRUE as second argument to view plot)
+fish_counts(all_fish)
 ```
